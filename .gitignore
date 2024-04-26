@@ -1,0 +1,10 @@
+.settings
+.classpath
+.project
+
+build
+target
+deploy
+
+__pycache__
+myenv
