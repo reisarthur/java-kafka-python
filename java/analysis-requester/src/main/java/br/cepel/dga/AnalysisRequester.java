@@ -17,6 +17,7 @@ public class AnalysisRequester {
 		ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic, key, value);
 
 		producerRecord.headers().add(new RecordHeader("version", "1.0".getBytes()));
+		producerRecord.headers().add(new RecordHeader("correlationId", KafkaUtils.generateRandomByteArray(20)));
 
 		producer.send(producerRecord);
 		producer.flush();
@@ -25,6 +26,7 @@ public class AnalysisRequester {
 		System.out.println("Record sent:");
 		System.out.println("Key: " + producerRecord.key());
 		System.out.println("Value: " + producerRecord.value());
+		producerRecord.headers().forEach( (header) -> System.out.println(header));
 
 	}
 

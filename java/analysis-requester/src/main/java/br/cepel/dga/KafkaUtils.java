@@ -2,6 +2,7 @@ package br.cepel.dga;
 
 import java.util.Date;
 import java.util.Properties;
+import java.security.SecureRandom;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -45,6 +46,13 @@ public class KafkaUtils {
 			System.out.println("Headers: " + recordHeader.key() + " => " + new String(recordHeader.value()));
 		}
 		System.out.println("Value: " + record.value());
+	}
+
+	public static byte[] generateRandomByteArray(int length) {
+		SecureRandom random = new SecureRandom();
+		byte[] byteArray = new byte[length];
+		random.nextBytes(byteArray);
+		return byteArray;
 	}
 
 }
