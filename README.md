@@ -1,6 +1,9 @@
 # java-kafka-python
-Integrating Java and Python via Kafka
+*Integrating Java and Python via Kafka*
 
+The main goal of this project is to connect Java with Python, in a request/response pattern. The flowchart shows how the code works: basically from **AnalysisRequester.java** we can send a message in the topic 'analysis.request', passing the desired module in the `msg.key` and the data in the `msg.value`. Then, the **analysis-manager.py** resolves it, using the proper inner module, and includes the returned result inside `msg.value`. Finally, the **AnalysisListener.java** just prints out the messages comming from the topic 'analysis.response'.
+
+![java-kafka-python](java-kafka-python-dark.png)
 
 ## Requirements
 
