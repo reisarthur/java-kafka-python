@@ -40,6 +40,7 @@ public class KafkaUtils {
 	}
 
 	public static void printRecord(ConsumerRecord<String, String> record) {
+		System.out.println();
 		System.out.println("Key: " + record.key() + ", TimeStamp: " + new Date(record.timestamp()));
 		System.out.println("Topic: " + record.topic() + ", Partition: " + record.partition() + ", Offset: " + record.offset());
 		for (Header recordHeader : record.headers()) {

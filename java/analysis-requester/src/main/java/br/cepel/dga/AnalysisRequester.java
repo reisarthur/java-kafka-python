@@ -17,7 +17,7 @@ public class AnalysisRequester {
 		ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic, key, value);
 
 		producerRecord.headers().add(new RecordHeader("version", "1.0".getBytes()));
-		producerRecord.headers().add(new RecordHeader("correlationId", KafkaUtils.generateRandomByteArray(20)));
+		producerRecord.headers().add(new RecordHeader("correlationId", KafkaUtils.generateRandomByteArray(10)));
 
 		producer.send(producerRecord);
 		producer.flush();
