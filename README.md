@@ -27,7 +27,7 @@ docker compose up
 cd ~/dev/java-kafka-python/python/
 python -m venv myenv
 source myenv/bin/activate.fish
-pip install kafka kafka-python
+pip install kafka-python
 ```
 
 
