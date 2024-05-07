@@ -14,6 +14,8 @@ cd ~/dev
 git clone https://github.com/reisarthur/java-kafka-python.git
 ```
 
+- Java 17.0.11
+
 - Kafka 3.7.0 - run on docker:
 
 ```shell
